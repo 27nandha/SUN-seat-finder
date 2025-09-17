@@ -20,7 +20,9 @@ export default function Home() {
       try {
         // Call your backend, not Nominatim directly
         const { data } = await axios.get(
-          `http://localhost:5000/autocomplete?q=${encodeURIComponent(query)}`
+          `https://sun-seat-finder.onrender.com/autocomplete?q=${encodeURIComponent(
+            query
+          )}`
         );
         setSuggestions(data);
       } catch (err) {
@@ -48,7 +50,7 @@ export default function Home() {
 
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/reverse-geocode?lat=${latitude}&lon=${longitude}`
+          `https://sun-seat-finder.onrender.com/reverse-geocode?lat=${latitude}&lon=${longitude}`
         );
 
         // Fill input with the nice address string
@@ -68,11 +70,14 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await axios.post("http://localhost:5000/find-seat", {
-        start,
-        end,
-        time,
-      });
+      const { data } = await axios.post(
+        "https://sun-seat-finder.onrender.com/find-seat",
+        {
+          start,
+          end,
+          time,
+        }
+      );
       navigate("/result", { state: data });
     } catch (err) {
       alert("Something went wrong. Try again.");
