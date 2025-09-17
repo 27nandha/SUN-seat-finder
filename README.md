@@ -55,4 +55,4 @@
 
 | **Home Screen** | **Loading State** | **Result Screen** |  
 |-----------------|------------------|------------------|  
-| ![Home](img1.png) | ![Loading](img2.png) | ![Result](img3.png) |  
+| ![Home](images/img1.png) | ![Loading](images/img2.png) | ![Result](images/img3.png) |  
